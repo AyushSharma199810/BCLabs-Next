@@ -1,8 +1,14 @@
 const { MongoClient } = require('mongodb');
+const dotenv = require('dotenv');
+
+// Load environment variables from .env file
+dotenv.config();
+
+// Connection URI and database name from environment variable
+const uri = process.env.MONGODB_URI;
 
 // Connection URI and database name
-const uri = 'mongodb://127.0.0.1:27017'; // Replace with your MongoDB URI
-const dbName = 'admin'; // Replace with your database name
+const dbName = 'cluster0'; // Replace with your database name
 
 // Sample data to insert
 const data = [
