@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Component = ({ className = "" }) => {
   return (
     <div
-      className={`flex-[0.9322] [backdrop-filter:blur(30px)] rounded-3xs bg-gray-300 box-border overflow-hidden flex flex-col items-start justify-start py-[38px] px-[39px] gap-[30px] max-w-full ml-[-1180px] text-left text-xl text-zinc-50 font-roboto border-[1px] border-solid border-darkslategray-100 mq450:pt-[38px] mq450:pb-[25px] mq450:box-border ${className}`}
+      className={`flex-[0.9322] [backdrop-filter:blur(30px)] rounded-3xs bg-gray-300 box-border overflow-hidden flex flex-col items-start justify-start py-[38px] px-[39px] gap-[30px] max-w-full ml-[-1257px] text-left text-xl text-zinc-50 font-roboto border-[1px] border-solid border-darkslategray-100 mq450:pt-[38px] mq450:pb-[25px] mq450:box-border ${className}`}
     >
       <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-5 box-border max-w-full">
         <div className="flex-1 flex flex-row items-start justify-between max-w-full gap-[20px] mq450:flex-wrap">
@@ -85,7 +85,7 @@ const Component = ({ className = "" }) => {
               1 BTC = 32.4039 ETH
             </div>
             <div className="w-[83px] relative text-royalblue inline-block overflow-hidden text-ellipsis whitespace-nowrap">
-              Free exchage
+              Free exchange
             </div>
           </div>
           <div className="w-[85px] flex flex-col items-start justify-start pt-2.5 px-0 pb-0 box-border text-dimgray">

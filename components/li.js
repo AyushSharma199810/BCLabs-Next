@@ -8,6 +8,12 @@ const Li = ({
   prop1,
   prop2,
 }) => {
+  const getColor = (value) => {
+    if (value > 0) return 'green';
+    if (value < 0) return 'red';
+    return 'gray';
+  };
+
   return (
     <div
       className={`self-stretch flex flex-row items-center justify-start py-2 px-0 [row-gap:20px] text-left text-lg text-zinc-50 font-roboto mq1225:flex-wrap ${className}`}
@@ -33,10 +39,10 @@ const Li = ({
       <div className="flex-1 relative font-medium inline-block overflow-hidden text-ellipsis whitespace-nowrap min-w-[71px]">
         {prop}
       </div>
-      <div className="flex-1 relative font-medium text-tomato inline-block overflow-hidden text-ellipsis whitespace-nowrap min-w-[71px]">
+      <div className="flex-1 relative font-medium inline-block overflow-hidden text-ellipsis whitespace-nowrap min-w-[71px]" style={{ color: getColor(Number(prop1.replace('%', ''))) }}>
         {prop1}
       </div>
-      <div className="flex-1 relative font-medium text-tomato inline-block overflow-hidden text-ellipsis whitespace-nowrap min-w-[71px]">
+      <div className="flex-1 relative font-medium inline-block overflow-hidden text-ellipsis whitespace-nowrap min-w-[71px]" style={{ color: getColor(Number(prop2.replace('$', ''))) }}>
         {prop2}
       </div>
       <div className="w-[66px] bg-springgreen flex flex-row items-center justify-center p-2.5 box-border text-darkslategray-200">

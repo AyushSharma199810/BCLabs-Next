@@ -1,5 +1,5 @@
 import Li from "../components/li";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import Component from "../components/component";
 
 const Main = () => {
@@ -7,14 +7,14 @@ const Main = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/data');
+        const response = await fetch("/api/data");
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const jsonData = await response.json();
         setData(jsonData);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -83,7 +83,8 @@ const Main = () => {
         <section className="self-stretch flex flex-row flex-wrap items-end justify-start max-w-full z-[1] text-left text-xl text-zinc-50 font-roboto">
           <div className="flex-1 flex flex-col items-start justify-start pt-0 px-0 pb-[488px] box-border min-h-[1166px] max-w-full mq750:pb-[206px] mq750:box-border mq1225:pb-[317px] mq1225:box-border">
             <div className="self-stretch [backdrop-filter:blur(30px)] rounded-3xs bg-gray-300 overflow-hidden flex flex-col items-start justify-start py-7 px-10 gap-[8px] border-[1px] border-solid border-darkslategray-100 mq750:pt-5 mq750:pb-5 mq750:box-border">
-              <div className="self-stretch h-[50px] overflow-hidden shrink-0 flex flex-col items-start justify-start pt-3.5 px-0 pb-[13px] box-border gap-[13px] mq1225:h-auto">
+            <div className="self-stretch h-[50px] overflow-hidden shrink-0 flex flex-col items-start justify-start pt-3.5 px-[47px] pb-[13px] box-border gap-[13px] mq1225:h-auto">
+
                 <div className="self-stretch flex flex-row items-start justify-start [row-gap:20px] mq1225:flex-wrap">
                   <div className="flex-1 relative font-semibold inline-block overflow-hidden text-ellipsis whitespace-nowrap min-w-[91px] mq450:text-base">
                     ASSETS
@@ -120,39 +121,11 @@ const Main = () => {
                   />
                 ))}
               </div>
-             
-              {/* <div className="absolute top-[107px] left-[46px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[108px]" />
-              <div className="absolute top-[137px] left-[102px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[78px]" />
-              <div className="absolute top-[158px] left-[158px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[57px]" />
-              <div className="absolute top-[176px] left-[214px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[39px]" />
-              <div className="absolute top-[184px] left-[270px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[31px]" />
-              <div className="absolute top-[158px] left-[326px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[57px]" />
-              <div className="absolute top-[130px] left-[382px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[85px]" />
-              <div className="absolute top-[111px] left-[438px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[104px]" />
-              <div className="absolute top-[40px] left-[494px] rounded-lg [background:linear-gradient(180deg,_#6dffdc,_#4e5855)] w-[46px] h-[175px]" />
-              <div className="absolute top-[64px] left-[550px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[151px]" />
-              <div className="absolute top-[87px] left-[606px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-32" />
-              <div className="absolute top-[77px] left-[662px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[138px]" />
-              <div className="absolute top-[107px] left-[718px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[108px]" />
-              <div className="absolute top-[87px] left-[774px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-32" />
-              <div className="absolute top-[123px] left-[830px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[92px]" />
-              <div className="absolute top-[87px] left-[886px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-32" />
-              <div className="absolute top-[58px] left-[942px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[157px]" />
-              <div className="absolute top-[135px] left-[998px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-20" />
-              <div className="absolute top-[97px] left-[1054px] rounded-lg [background:linear-gradient(180deg,_#c2c2c2,_#606060)] w-[46px] h-[118px]" />
-              <div className="absolute top-[-5px] left-[455px] bg-white flex flex-row items-center justify-center p-2.5 gap-[10px]">
-                <div className="h-3.5 relative font-medium inline-block overflow-hidden text-ellipsis whitespace-nowrap">
-                  12:44
-                </div>
-                <div className="self-stretch flex-1 relative text-sm font-medium text-teal overflow-hidden text-ellipsis whitespace-nowrap">
-                  65,592.60
-                </div>
-              </div> */}
             </div>
           </div>
-            <Component/>
+          <Component />
         </section>
-      </main> 
+      </main>
     </div>
   );
 };
